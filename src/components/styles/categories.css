@@ -1,0 +1,13 @@
+.check-status {
+    font-weight: 700;
+    margin-top: 50px;
+    color: #fff;
+    cursor: pointer;
+    background-color: #027cd9;
+    padding: 12px 30px;
+    border-radius: 3px;
+    
+    border: none;
+    
+   
+  }

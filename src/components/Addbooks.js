@@ -1,3 +1,5 @@
+import './styles/addbooks.css';
+
 const AddBooks = () => (
   <div className="add-form">
     <span className="add-title"> Add New Book</span>

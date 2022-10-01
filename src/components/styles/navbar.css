@@ -1,0 +1,22 @@
+.navbar {
+  align-items: center;
+  padding: 24px 4%;
+  background-color: #fff;
+  display: flex;
+  grid-gap: 40px;
+  gap: 40px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.nav-list {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0290ff;
+}

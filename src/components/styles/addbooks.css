@@ -1,42 +1,33 @@
 
-  input {
-    border: 1px solid #e8e8e8;
-    padding: 12px;
-    font-size: 1rem;
-    border-radius: 4px;
-    
-    background-color: #fff;
-    
-  }
-.add-title {
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: rgb(127, 126, 126);
-    
-  }
-  
-  .add-form {
-    grid-gap: 33px;
-    margin-top: 20px;
-    display: flex;
-    gap: 33px;
-    flex-direction: column;
-    
-    
-  }
-  
+input {
+  border: 1px solid #e8e8e8;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 4px;
+  background-color: #fff;
+}
 
-  
-  .addbook-btn {
-    border-radius: 3px;
-    font-weight: 700;
-    cursor: pointer;
-    padding: 12px 30px;
-    color: #fff;
-    background-color: #0290ff;
-    border: none;
-    
-   
-    
-  }
+.add-title {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgb(127, 126, 126);
+}
+
+.add-form {
+  grid-gap: 33px;
+  margin-top: 20px;
+  display: flex;
+  gap: 33px;
+  flex-direction: column;
+}
+
+.addbook-btn {
+  border-radius: 3px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 12px 30px;
+  color: #fff;
+  background-color: #0290ff;
+  border: none;
+}

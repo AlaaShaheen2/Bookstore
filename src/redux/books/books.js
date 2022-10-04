@@ -1,4 +1,4 @@
-import bookInfo from "../bookInfo";
+import bookInfo from '../bookInfo';
 
 const ADD_BOOK = 'my_app/books/ADD_BOOK';
 const REMOVE_BOOK = 'my_app/books/REMOVE_BOOK';

@@ -15,9 +15,9 @@
 - JS
 - React 
 
-## Live Demo : 
+## Get Live Demo
 
-[BookSrtore]: (https://bookstoresite.netlify.app/)
+[Live Demo Link](https://bookstoresite.netlify.app/)
 
 ## Authors
 👤 **Alaa Shaheen**

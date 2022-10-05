@@ -2,9 +2,9 @@
 
    ##### The Bookstore is a website built using React and Redux. This MVP version of the App allows you to:
 
-        *Display a list of books.
-        *Add a book.
-        *Remove a selected book.
+        - Display a list of books.
+        - Add a book.
+        - Remove a selected book.
 
    ##### It has two subpages: "Books" and "Categories."
 
@@ -56,4 +56,5 @@ Give a ⭐️ if you like this project!
 - Thanks to Cindy Shin the author of the original desig
 
 ## 📝 License
+
 This project is [MIT](./LICENSE) licensed.

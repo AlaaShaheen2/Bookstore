@@ -1,41 +1,64 @@
-# Getting Started with Create React App
+# React App: Bookstore CMS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+   ##### The Bookstore is a website built using React and Redux. This MVP version of the App allows you to:
 
-## Available Scripts
+        - Display a list of books.
+        - Add a book.
+        - Remove a selected book.
 
-In the project directory, you can run:
+   ##### It has two subpages: "Books" and "Categories."
 
-### `npm start`
+## Built With
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- HTML
+- CSS
+- JS
+- React 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Get Live Demo
 
-### `npm test`
+[Live Demo Link](https://bookstoresite.netlify.app/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Authors
+👤 **Alaa Shaheen**
 
-### `npm run build`
+- GitHub: [@AlaaShaheen2](https://github.com/AlaaShaheen2)
+- Twitter: [@Alaa Shaheen](https://twitter.com/AlaaShaheen93)
+- LinkedIn: [@Alaa Shaheen](https://www.linkedin.com/in/alaa-shaheen-879140240/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🤝 Contributing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Contributions, issues, and feature requests are welcome!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Feel free to check the [issues page](../../issues/)
 
-### `npm run eject`
+## Show your support
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Give a ⭐️ if you like this project!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Setup: 
+- copy this link `https://github.com/AlaaShaheen2/Bookstore`.
+- get the directory that you want to clone the repository.
+- open the command prompt in this directory.
+- write ` https://github.com/AlaaShaheen2/Bookstore`.
+- go to the repository folder in your command prompt and open `index.html` file
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Install
+- write `https://github.com/AlaaShaheen2/Bookstore`.
+- go to the repository folder in your command prompt and open `index.html` file
 
+### Usage
+- By clicking on 'Go live' in VS studio, you can be able to see this project in action.
+- You can also access this open source website in the aboue provided demo link
+
+### Run tests
+- You can navigate to different parts of the page from the navigation bar and you can also inspect using the available browser tools to se how the webpages were built.
+
+## Acknowledgments
+
+- Thanks to the reviewers
+- Special thanks to the co-creator of Redux (Dan Abramov) for his complete course on redux actions and store methodes.
+
+## 📝 License
+This project is [MIT](./LICENSE.txt) licensed.

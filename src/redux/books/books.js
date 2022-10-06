@@ -22,7 +22,7 @@ const initState = [
 const add = (state, info) => {
   const expected = bookInfo(info);
   const expecteds = [...state, expected];
-  return expecteds ;
+  return expecteds;
 };
 const remove = (state, bookID) => {
   const info = state.filter((x) => x.bookID !== bookID);

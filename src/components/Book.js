@@ -1,8 +1,16 @@
 import './styles/book.css';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
-  const { title, author } = props;
+  const disp = useDispatch();
+  const dele = (e) => {
+    const bookId = e.target.id;
+    disp(removeBook(bookId));
+  };
+
+  const { id, title, author } = props;
   return (
     <div className="book-card">
       <div className="book-info">
@@ -17,9 +25,17 @@ const Book = (props) => {
         </div>
         <div className="action-btns">
           <ul className="actions-li">
-            <li>Comments</li>
-            <li>Remove</li>
-            <li>Edit</li>
+            <li>
+              <button type="button">
+                Comments
+              </button>
+            </li>
+            <li>
+              <button type="button" id={id} onClick={dele}>Remove</button>
+            </li>
+            <li>
+              <button type="button">Edit</button>
+            </li>
           </ul>
         </div>
       </div>
@@ -28,6 +44,7 @@ const Book = (props) => {
 };
 
 Book.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
 };

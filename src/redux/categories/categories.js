@@ -1,7 +1,4 @@
-const initState = {
-  categories: [],
-};
-
+const initState = '';
 const CHECK_STATUS = 'my_app/categories/CHECK_STATUS';
 
 const status = () => 'Under construction';

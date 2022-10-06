@@ -1,9 +1,11 @@
+import { v4 as uuid } from 'uuid';
+
 const bookInfo = (info) => {
   const { title, author } = info;
   return {
-    bookID: title,
+    id: uuid(),
     title,
-    authors: author,
+    author,
   };
 };
 export default bookInfo;

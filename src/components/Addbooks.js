@@ -37,13 +37,13 @@ const AddBooks = () => {
   return (
     <div className="add-form" onSubmit={confirm}>
       <span className="add-title"> Add New Book</span>
-      <div className="form-inp">
+      <form className="form-inp">
         <input placeholder="Book Title" className="title-inp" onChange={swapTitle} />
         <input placeholder="Author" className="author-inp" onChange={swapAuth} />
-        <button type="button" className="addbook-btn">
+        <button type="submit" className="addbook-btn">
           Add Book
         </button>
-      </div>
+      </form>
     </div>
   );
 };

@@ -24,8 +24,8 @@ const add = (state, info) => {
   const expecteds = [...state, expected];
   return expecteds;
 };
-const remove = (state, bookID) => {
-  const info = state.filter((x) => x.bookID !== bookID);
+const remove = (state, id) => {
+  const info = state.filter((x) => x.id !== id);
   return info;
 };
 const reducer = (state = initState, action = {}) => {
@@ -33,14 +33,14 @@ const reducer = (state = initState, action = {}) => {
     case ADD_BOOK:
       return add(state, action.info);
     case REMOVE_BOOK:
-      return remove(state);
+      return remove(state, action.id);
     default:
       return state;
   }
 };
 
 const addBoook = (info) => ({ type: ADD_BOOK, info });
-const removeBook = (bookID) => ({ type: REMOVE_BOOK, bookID });
+const removeBook = (id) => ({ type: REMOVE_BOOK, id });
 
 export { addBoook, removeBook };
 export default reducer;

@@ -1,46 +1,111 @@
-import bookInfo from '../bookInfo';
+/* eslint-disable camelcase */
+/* eslint-disable no-param-reassign */
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { keys } from 'lodash';
+import status from '../status';
 
-const ADD_BOOK = 'my_app/books/ADD_BOOK';
-const REMOVE_BOOK = 'my_app/books/REMOVE_BOOK';
-const initState = [
-  {
-    id: '0',
-    title: 'Clean Code',
-    author: 'Robert Cecil Martin',
+const createBook = (info) => ({
+  item_id: info.id,
+  ...info,
+});
+
+const main = 'my_app/books';
+const apiUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/lrfVUy1HXgzbwRh1Fa9Z/books';
+const setting = {
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
   },
-  {
-    id: '1',
-    title: 'The Pragmatic Programmer',
-    author: 'Andy Hunt and Dave Thomas',
-  },
-  {
-    id: '2',
-    title: 'Code Complete',
-    author: 'Steve McConnell',
-  },
-];
-const add = (state, info) => {
-  const expected = bookInfo(info);
-  const expecteds = [...state, expected];
-  return expecteds;
 };
-const remove = (state, id) => {
-  const info = state.filter((x) => x.id !== id);
-  return info;
-};
-const reducer = (state = initState, action = {}) => {
-  switch (action.type) {
-    case ADD_BOOK:
-      return add(state, action.info);
-    case REMOVE_BOOK:
-      return remove(state, action.id);
-    default:
-      return state;
-  }
+const getBook = createAsyncThunk(
+  `${main}/getBook`,
+  async () => {
+    const result = await axios.get(apiUrl, setting);
+    return result.data;
+  },
+);
+
+const addBook = createAsyncThunk(
+  `${main}/ADD_BOOK`,
+  async (info, thunkAPI) => {
+    const book = createBook(info);
+    const response = await axios.post(apiUrl, book, setting);
+    const responseStatus = {
+      data: response.data,
+      status: response.status,
+      statusText: response.statusText,
+    };
+    if (responseStatus.status === 201) thunkAPI.dispatch(getBook());
+    return responseStatus;
+  },
+);
+const endPointId = (itemId) => `${apiUrl}/${itemId}`;
+
+const deleteBook = createAsyncThunk(
+  `${main}/DELETEBOOK`,
+  async (itemId, thunkAPI) => {
+    const response = await axios.delete(endPointId(itemId), setting);
+
+    const responseStatus = {
+      info: response.info,
+      status: response.status,
+      statusText: response.statusText,
+    };
+    if (responseStatus.status === 201) thunkAPI.dispatch(getBook());
+    return responseStatus;
+  },
+);
+const booksSlice = createSlice({
+  name: main,
+  initialState: {
+    loading: status.normal,
+    books: [],
+    error: null,
+  },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(getBook.pending, (state) => {
+        state.loading = status.pending;
+      })
+      .addCase(getBook.fulfilled, (state, action) => {
+        state.loading = status.succeeded;
+        const Ids = keys(action.payload);
+        state.books = Ids.map((item_id) => ({
+          item_id,
+          ...action.payload[item_id][0],
+        }));
+      })
+      .addCase(getBook.rejected, (state) => {
+        state.loading = status.failed;
+      })
+      .addCase(addBook.pending, (state) => {
+        state.loading = status.pending;
+      })
+      .addCase(addBook.fulfilled, (state) => {
+        state.loading = status.succeeded;
+      })
+      .addCase(addBook.rejected, (state) => {
+        state.loading = status.failed;
+      })
+      .addCase(deleteBook.pending, (state) => {
+        state.loading = status.pending;
+      })
+      .addCase(deleteBook.fulfilled, (state) => {
+        state.loading = status.succeeded;
+      })
+      .addCase(deleteBook.rejected, (state) => {
+        state.loading = status.failed;
+      });
+  },
+});
+const { actions, reducer } = booksSlice;
+export {
+  actions,
+  getBook,
+  addBook,
+  deleteBook,
 };
 
-const addBoook = (info) => ({ type: ADD_BOOK, info });
-const removeBook = (id) => ({ type: REMOVE_BOOK, id });
-
-export { addBoook, removeBook };
 export default reducer;

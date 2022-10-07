@@ -18,11 +18,12 @@ const setting = {
     'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
   },
 };
+
 const getBook = createAsyncThunk(
   `${main}/getBook`,
   async () => {
-    const result = await axios.get(apiUrl, setting);
-    return result.data;
+    const res = await axios.get(apiUrl, setting);
+    return res.data;
   },
 );
 

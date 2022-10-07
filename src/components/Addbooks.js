@@ -9,6 +9,7 @@ const AddBooks = () => {
   const [book, setBook] = useState({
     title: '',
     author: '',
+    category: '',
     item_id: 0,
   });
 
@@ -39,9 +40,9 @@ const AddBooks = () => {
     }));
   };
   return (
-    <div className="add-form" onSubmit={confirm}>
+    <div className="add-form">
       <span className="add-title"> Add New Book</span>
-      <form className="form-inp">
+      <form className="form-inp" onSubmit={confirm}>
         <input placeholder="Book Title" className="title-inp" onChange={swapTitle} />
         <input placeholder="Author" className="author-inp" onChange={swapAuth} />
         <button type="submit" className="addbook-btn">

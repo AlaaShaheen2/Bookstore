@@ -1,13 +1,13 @@
 import './styles/book.css';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { deleteBook } from '../redux/books/books';
 
 const Book = (props) => {
   const disp = useDispatch();
   const dele = (e) => {
     const bookId = e.target.id;
-    disp(removeBook(bookId));
+    disp(deleteBook(bookId));
   };
 
   const { id, title, author } = props;
@@ -15,7 +15,7 @@ const Book = (props) => {
     <div className="book-card">
       <div className="book-info">
         <div className="book-category">
-          <span>Action</span>
+          <span>Computer Science</span>
         </div>
         <div className="book-title">
           <span>{title}</span>

@@ -1,19 +1,21 @@
 import './styles/addbooks.css';
+import { v4 as uuid } from 'uuid';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBoook } from '../redux/books/books';
+
+import { addBook } from '../redux/books/books';
 
 const AddBooks = () => {
   const [book, setBook] = useState({
     title: '',
     author: '',
-    id: 0,
+    item_id: 0,
   });
 
   const disp = useDispatch();
   const confirm = (el) => {
     el.preventDefault();
-    disp(addBoook(book));
+    disp(addBook(book));
     el.target.reset();
   };
 
@@ -22,6 +24,7 @@ const AddBooks = () => {
     const { value } = el.target;
     setBook((el) => ({
       ...el,
+      item_id: uuid(),
       title: value,
     }));
   };
@@ -31,6 +34,7 @@ const AddBooks = () => {
     const { value } = el.target;
     setBook((el) => ({
       ...el,
+      item_id: uuid(),
       author: value,
     }));
   };

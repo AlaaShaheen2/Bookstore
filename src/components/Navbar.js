@@ -1,5 +1,6 @@
 import './styles/navbar.css';
 import { Link } from 'react-router-dom';
+import img from './logoin.jpeg';
 
 const Navbar = () => (
 

@@ -39,6 +39,19 @@ const Book = (props) => {
           </ul>
         </div>
       </div>
+      <div className="progress-info">
+        <div className="progress-bar" />
+        <div className="progress-percent">
+          <span className="percent">68%</span>
+          <span className="completed">Completed</span>
+        </div>
+      </div>
+
+      <div className="chapter-info">
+        <span className="current-chapter">current chapter</span>
+        <span className="chapter">Chapter 14</span>
+        <button type="button" className="update-btn">Update progress</button>
+      </div>
     </div>
   );
 };

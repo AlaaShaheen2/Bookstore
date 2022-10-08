@@ -40,15 +40,17 @@ const AddBooks = () => {
     }));
   };
   return (
-    <div className="add-form">
+    <div>
       <span className="add-title"> Add New Book</span>
-      <form className="form-inp" onSubmit={confirm}>
-        <input placeholder="Book Title" className="title-inp" onChange={swapTitle} />
-        <input placeholder="Author" className="author-inp" onChange={swapAuth} />
-        <button type="submit" className="addbook-btn">
-          Add Book
-        </button>
-      </form>
+      <div className="add-form">
+        <form className="form-inp" onSubmit={confirm}>
+          <input placeholder="Book Title" className="title-inp" onChange={swapTitle} />
+          <input placeholder="Author" className="author-inp" onChange={swapAuth} />
+          <button type="submit" className="addbook-btn">
+            Add Book
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

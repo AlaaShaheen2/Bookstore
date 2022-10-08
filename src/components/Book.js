@@ -46,10 +46,7 @@ const Book = (props) => {
           <span className="completed">Completed</span>
         </div>
       </div>
-      <div className='vertical'>
-    
-
-      </div>
+      <div className="vertical" />
 
       <div className="chapter-info  d-flex flex-center">
         <span className="current-chapter">current chapter</span>

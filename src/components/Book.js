@@ -12,8 +12,8 @@ const Book = (props) => {
 
   const { id, title, author } = props;
   return (
-    <div className="book-card">
-      <div className="book-info">
+    <div className="book-card d-flex ">
+      <div className="book-info  d-flex flex-center">
         <div className="book-category">
           <span>Computer Science</span>
         </div>
@@ -24,7 +24,7 @@ const Book = (props) => {
           <span>{author}</span>
         </div>
         <div className="action-btns">
-          <ul className="actions-li">
+          <ul className="actions-li  d-flex">
             <li>
               <button type="button">
                 Comments
@@ -39,15 +39,19 @@ const Book = (props) => {
           </ul>
         </div>
       </div>
-      <div className="progress-info">
+      <div className="progress-info  d-flex">
         <div className="progress-bar" />
-        <div className="progress-percent">
+        <div className="progress-percent  d-flex flex-center">
           <span className="percent">68%</span>
           <span className="completed">Completed</span>
         </div>
       </div>
+      <div className='vertical'>
+    
 
-      <div className="chapter-info">
+      </div>
+
+      <div className="chapter-info  d-flex flex-center">
         <span className="current-chapter">current chapter</span>
         <span className="chapter">Chapter 14</span>
         <button type="button" className="update-btn">Update progress</button>

@@ -1,12 +1,17 @@
 .book-card {
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.book-info {
+.d-flex {
   display: flex;
+}
+
+.flex-center {
   flex-direction: column;
+}
+
+.book-info {
   width: 40%;
 }
 
@@ -25,7 +30,6 @@
 }
 
 .actions-li {
-  display: flex;
   align-items: center;
   margin-top: 1.313rem;
 }
@@ -50,7 +54,6 @@
 }
 
 .progress-info {
-  display: flex;
   align-items: center;
 }
 
@@ -64,8 +67,6 @@
 }
 
 .progress-percent {
-  display: flex;
-  flex-direction: column;
   margin-left: 10px;
   color: #121212;
 }
@@ -77,11 +78,6 @@
 .completed {
   font-size: 1rem;
   opacity: 0.5;
-}
-
-.chapter-info {
-  display: flex;
-  flex-direction: column;
 }
 
 .current-chapter {
@@ -109,4 +105,10 @@
   letter-spacing: 0.5px;
   color: #fff;
   text-transform: uppercase;
+}
+
+.vertical {
+  width: 3px;
+  height: 140px;
+  background-color: #e8e8e8;
 }
